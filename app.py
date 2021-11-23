@@ -4,7 +4,9 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from flask import request
 
 app = Flask(__name__, static_url_path='/static')
-english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
+english_bot = ChatBot("Chatterbot",
+                      storage_adapter="chatterbot.storage.SQLStorageAdapter",
+                      )
 trainer = ChatterBotCorpusTrainer(english_bot)
 trainer.train("chatterbot.corpus.english")
 
